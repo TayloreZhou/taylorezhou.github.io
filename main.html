@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>个人主页 - Your Name</title>
+  <style>
+    /* 全局样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* 导航栏 */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+    }
+
+    nav h1 {
+      font-size: 24px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    /* 首页头图 */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: url('https://picsum.photos/1920/1080?blur=3') no-repeat center center/cover;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    header .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      animation: fadeInDown 2s ease;
+    }
+
+    header p {
+      font-size: 22px;
+      animation: fadeInUp 2s ease;
+    }
+
+    /* 关于我 */
+    section {
+      padding: 80px 15%;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #ffd700;
+    }
+
+    .about {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 250px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    .about p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* 技能卡片 */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .skill-card h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    /* 联系方式 */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .contact a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    /* 动画 */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Your Name</h1>
+    <ul>
+      <li><a href="#about">关于我</a></li>
+      <li><a href="#skills">技能</a></li>
+      <li><a href="#contact">联系我</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="content">
+      <h2>欢迎来到我的个人主页</h2>
+      <p>这里展示我的故事与技能</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>关于我</h2>
+    <div class="about">
+      <img src="https://picsum.photos/250" alt="个人头像">
+      <p>
+        大家好！我是Your Name，一名热爱技术与设计的探索者。<br>
+        我擅长 Web 开发、人工智能与数据可视化，喜欢将创意与技术结合，创造出令人惊叹的作品。<br>
+        在工作之外，我喜欢旅行、摄影和阅读。
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>我的技能</h2>
+    <div class="skills">
+      <div class="skill-card">
+        <h3>Web 开发</h3>
+        <p>精通 HTML, CSS, JavaScript, React 等前端技术。</p>
+      </div>
+      <div class="skill-card">
+        <h3>人工智能</h3>
+        <p>掌握深度学习、强化学习，并能应用于多智能体系统。</p>
+      </div>
+      <div class="skill-card">
+        <h3>数据可视化</h3>
+        <p>善于使用 Python、D3.js 等工具展示复杂数据。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>联系我</h2>
+    <div class="contact">
+      <p>邮箱: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">yourgithub</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourlinkedin" target="_blank">yourlinkedin</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Your Name | Designed with ❤️
+  </footer>
+</body>
+</html>
